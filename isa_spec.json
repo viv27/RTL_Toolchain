@@ -1,0 +1,35 @@
+{
+  "isa_name": "CUSTOM16",
+  "word_width": 16,
+  "opcode_bits": 4,
+  "num_registers": 8,
+  "control_signals": [
+    {"name": "alu_op", "width": 3},
+    {"name": "reg_write", "width": 1},
+    {"name": "mem_read", "width": 1},
+    {"name": "mem_write", "width": 1},
+    {"name": "branch", "width": 1},
+    {"name": "jump", "width": 1},
+    {"name": "use_imm", "width": 1}
+  ],
+  "instructions": [
+    {
+      "mnemonic": "ADD",
+      "opcode": "0000",
+      "format": "R",
+      "description": "adds two numbers",
+      "control": {
+        "alu_op": "000",
+        "reg_write": "1",
+        "mem_read": "0",
+        "mem_write": "0",
+        "branch": "0",
+        "jump": "0",
+        "use_imm": "0"
+      }
+    }
+    
+  ]
+}
+
+
