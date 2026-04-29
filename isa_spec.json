@@ -27,7 +27,99 @@
         "jump": "0",
         "use_imm": "0"
       }
+    },
+    {
+      "mnemonic": "SUB",
+      "opcode": "0001",
+      "format": "R",
+      "description": "subtracts two numbers",
+      "control": {
+        "alu_op": "001",
+        "reg_write": "1",
+        "mem_read": "0",
+        "mem_write": "0",
+        "branch": "0",
+        "jump": "0",
+        "use_imm": "0"
+      }
+    },
+    {
+      "mnemonic": "MUL",
+      "opcode": "0010",
+      "format": "R",
+      "description": "multiplies two numbers",
+      "control": {
+        "alu_op": "010",
+        "reg_write": "1",
+        "mem_read": "0",
+        "mem_write": "0",
+        "branch": "0",
+        "jump": "0",
+        "use_imm": "0"
+      }
+    },
+    {
+      "mnemonic": "DIV",
+      "opcode": "0011",
+      "format": "R",
+      "description": "divies two numbers",
+      "control": {
+        "alu_op": "011",
+        "reg_write": "1",
+        "mem_read": "0",
+        "mem_write": "0",
+        "branch": "0",
+        "jump": "0",
+        "use_imm": "0"
+      }
+    },
+    {
+      "mnemonic": "AND",
+      "opcode": "0100",
+      "format": "R",
+      "description": "ANDs two numbers",
+      "control": {
+        "alu_op": "100",
+        "reg_write": "1",
+        "mem_read": "0",
+        "mem_write": "0",
+        "branch": "0",
+        "jump": "0",
+        "use_imm": "0"
+      }
+    },
+    {
+      "mnemonic": "OR",
+      "opcode": "0101",
+      "format": "R",
+      "description": "ORs two numbers",
+      "control": {
+        "alu_op": "101",
+        "reg_write": "1",
+        "mem_read": "0",
+        "mem_write": "0",
+        "branch": "0",
+        "jump": "0",
+        "use_imm": "0"
+      }
+    },
+    {
+      "mnemonic": "NOT",
+      "opcode": "0110",
+      "format": "R",
+      "description": "Not of two numbers",
+      "control": {
+        "alu_op": "110",
+        "reg_write": "1",
+        "mem_read": "0",
+        "mem_write": "0",
+        "branch": "0",
+        "jump": "0",
+        "use_imm": "0"
+      }
     }
+    
+
     
   ]
 }
