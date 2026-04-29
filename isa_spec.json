@@ -117,6 +117,111 @@
         "jump": "0",
         "use_imm": "0"
       }
+    },
+    {
+      "mnemonic": "LOAD",
+      "opcode": "0111",
+      "format": "I",
+      "description": "Load from memeory",
+      "control": {
+        "alu_op": "111",
+        "reg_write": "1",
+        "mem_read": "1",
+        "mem_write": "0",
+        "branch": "0",
+        "jump": "0",
+        "use_imm": "1"
+      }
+    },
+    {
+      "mnemonic": "STORE",
+      "opcode": "1000",
+      "format": "I",
+      "description": "Store to memory",
+      "control": {
+        "alu_op": "111",
+        "reg_write": "0",
+        "mem_read": "0",
+        "mem_write": "1",
+        "branch": "0",
+        "jump": "0",
+        "use_imm": "1"
+      }
+    },
+    {
+      "mnemonic": "MOVI",
+      "opcode": "1001",
+      "format": "I",
+      "description": "move immediate value to register",
+      "control": {
+        "alu_op": "111",
+        "reg_write": "1",
+        "mem_read": "0",
+        "mem_write": "0",
+        "branch": "0",
+        "jump": "0",
+        "use_imm": "1"
+      }
+    },
+    {
+      "mnemonic": "JUMP",
+      "opcode": "1010",
+      "format": "I",
+      "description": "Jump to address",
+      "control": {
+        "alu_op": "111",
+        "reg_write": "0",
+        "mem_read": "0",
+        "mem_write": "0",
+        "branch": "0",
+        "jump": "1",
+        "use_imm": "1"
+      }
+    },
+    {
+      "mnemonic": "BEQ",
+      "opcode": "1011",
+      "format": "I",
+      "description": "Branch if equal",
+      "control": {
+        "alu_op": "001",
+        "reg_write": "0",
+        "mem_read": "0",
+        "mem_write": "0",
+        "branch": "1",
+        "jump": "0",
+        "use_imm": "1"
+      }
+    },
+    {
+      "mnemonic": "BNE",
+      "opcode": "1100",
+      "format": "I",
+      "description": "Branch not equal",
+      "control": {
+        "alu_op": "001",
+        "reg_write": "0",
+        "mem_read": "0",
+        "mem_write": "0",
+        "branch": "1",
+        "jump": "0",
+        "use_imm": "1"
+      }
+    },
+    {
+      "mnemonic": "HALT",
+      "opcode": "1101",
+      "format": "I",
+      "description": "Halt all operations",
+      "control": {
+        "alu_op": "111",
+        "reg_write": "0",
+        "mem_read": "0",
+        "mem_write": "0",
+        "branch": "0",
+        "jump": "0",
+        "use_imm": "0"
+      }
     }
     
 
