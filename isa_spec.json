@@ -1,5 +1,6 @@
 {
   "isa_name": "CUSTOM16",
+  "description": "Custom 16-bit ISA specification defining 14 instructions, their opcodes, formats, and control signal encodings used as input to the CUSTOM16 RTL toolchain for automated Verilog generation",
   "word_width": 16,
   "opcode_bits": 4,
   "num_registers": 8,
@@ -211,7 +212,7 @@
     {
       "mnemonic": "HALT",
       "opcode": "1101",
-      "format": "I",
+      "format": "R",
       "description": "Halt all operations",
       "control": {
         "alu_op": "111",
