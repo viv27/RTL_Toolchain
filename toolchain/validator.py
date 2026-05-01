@@ -1,8 +1,9 @@
+# validator.py
+# Validates the ISA spec for errors before any Verilog is emitted
+# Checks: duplicate opcodes, opcode bit length, missing signals, signal width mismatches
+
+
 from parser import ISASpec
-
-
-
-
 
 class ISAValidator:
    def __init__(self,spec):
