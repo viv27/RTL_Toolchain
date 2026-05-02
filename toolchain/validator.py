@@ -3,6 +3,9 @@
 # Checks: duplicate opcodes, opcode bit length, missing signals, signal width mismatches
 
 
+
+
+
 from parser import ISASpec
 
 class ISAValidator:
@@ -44,3 +47,6 @@ if __name__ == "__main__":
             print("ERROR: " + e)
     else:
         print("Validation passed.")
+
+
+
