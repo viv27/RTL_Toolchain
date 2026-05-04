@@ -34,7 +34,9 @@ class ISASpec:
 # will only print here, won't print if imported
 if __name__ == "__main__": 
     spec = ISASpec("../isa_spec.json")
-    print(spec.isa_name)
-    print(len(spec.Instructions))
-    print(len(spec.ControlSignals))
-    print(spec.ControlSignals[0].name)
+    # print(spec.isa_name)
+    #print((spec.Instructions[0].control[]))
+    # print(len(spec.ControlSignals))
+    # print(spec.ControlSignals[0].name)
+    # print(spec.ControlSignals[0].name)
+    # print(spec.ControlSignals[0].width)
