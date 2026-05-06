@@ -52,6 +52,52 @@ class VerilogEmitter:
         print("Generated: " + filepath)
         return filepath   
     
+    def emit_testbench(self):
+        lines = []
+        lines.append("//tb_decoder.v")
+        lines.append("module tb_decoder;")
+        lines.append("reg["+str(self.spec.opcode_bits-1)+":0] opcode;")
+        
+        for sig in self.spec.ControlSignals:
+            if sig.width > 1:
+                lines.append("wire["+str(sig.width-1)+":0]"+str(sig.name)+ ";")
+            else:
+                lines.append("wire "+str(sig.name)+";")
+
+        lines.append("decoder uut(")
+        lines.append(".opcode(opcode),")
+        for i,sig in enumerate(self.spec.ControlSignals):
+            is_last = (i == len(self.spec.ControlSignals)-1)
+            comma = "" if is_last else ","
+            lines.append("."+str(sig.name)+"("+str(sig.name)+")"+comma)
+        lines.append(");")
+
+        lines.append("initial begin")
+        lines.append('$display("Testing CUSTOM16 Decoder!");')
+        end = ";"
+        for instruction in self.spec.Instructions:
+            lines.append("    opcode = " + str(self.spec.opcode_bits) + "'b" + instruction.opcode + "; #10;  // " + instruction.mnemonic)
+            lines.append('    $display("' + instruction.mnemonic + ' : alu_op=%b reg_write=%b mem_read=%b mem_write=%b branch=%b jump=%b use_imm=%b", alu_op, reg_write, mem_read, mem_write, branch, jump, use_imm);')
+
+        lines.append('$display("Simulation complete.");')
+        
+        lines.append("$finish;")
+        lines.append("end")
+        lines.append("endmodule")
+
+        output = "\n".join(lines)
+        filepath = self.output_dir + "/tb_decoder.v"
+        with open(filepath, "w") as f:
+            f.write(output)
+        print("Generated: " + filepath)
+        return filepath
+    
+
+
+
+    
+    
+              
 
 if __name__ == "__main__":
     spec = ISASpec("../isa_spec.json")
@@ -63,3 +109,4 @@ if __name__ == "__main__":
     else:
         emitter = VerilogEmitter(spec, "../generated")
         emitter.emit_decoder()
+        emitter.emit_testbench()
