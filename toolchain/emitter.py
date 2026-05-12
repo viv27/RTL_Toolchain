@@ -92,10 +92,32 @@ class VerilogEmitter:
         print("Generated: " + filepath)
         return filepath
     
-
-
-
-    
+    def emit_control_rom(self):
+        lines = []
+        lines.append("//control _rom.v")
+        lines.append("module control_rom(")
+        lines.append("  input["+str(self.spec.opcode_bits-1)+":0] opcode,")
+        total_width = sum(sig.width for sig in self.spec.ControlSignals)
+        lines.append("  output["+str(total_width-1)+":0] control_word")
+        lines.append(");")
+        total_bits = 2**self.spec.opcode_bits - 1
+        lines.append("reg["+str(total_width-1)+":0] rom["+str(total_bits)+":0];")
+        
+        lines.append("initial begin")
+        
+        for n in self.spec.Instructions:
+            control_word = "".join(n.control[sig.name] for sig in self.spec.ControlSignals)
+            lines.append("        rom[" + str(self.spec.opcode_bits) + "'b" + n.opcode + "] = "+ str(total_width) + "'b" + control_word + ";  // " + n.mnemonic)                
+   
+        lines.append("end")
+        lines.append("assign control_word = rom[opcode];")
+        lines.append("endmodule")
+        output = "\n".join(lines)
+        filepath = self.output_dir + "/control_rom.v"
+        with open(filepath, "w") as f:
+         f.write(output)
+        print("Generated: " + filepath)
+        return filepath
     
               
 
@@ -110,3 +132,4 @@ if __name__ == "__main__":
         emitter = VerilogEmitter(spec, "../generated")
         emitter.emit_decoder()
         emitter.emit_testbench()
+        emitter.emit_control_rom()

@@ -1,0 +1,89 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1110-g18392a46)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_0000023f6e0dad80 .scope module, "control_rom" "control_rom" 2 2;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "opcode";
+    .port_info 1 /OUTPUT 9 "control_word";
+L_0000023f6df32930 .functor BUFZ 9, L_0000023f6dfaba00, C4<000000000>, C4<000000000>, C4<000000000>;
+v0000023f6df32cd0_0 .net *"_ivl_0", 8 0, L_0000023f6dfaba00;  1 drivers
+v0000023f6e0daf10_0 .net *"_ivl_2", 5 0, L_0000023f6dfabaa0;  1 drivers
+L_0000023f6dfabb48 .functor BUFT 1, C4<00>, C4<0>, C4<0>, C4<0>;
+v0000023f6df32890_0 .net *"_ivl_5", 1 0, L_0000023f6dfabb48;  1 drivers
+v0000023f6dfab820_0 .net "control_word", 8 0, L_0000023f6df32930;  1 drivers
+o0000023f6df67078 .functor BUFZ 4, C4<zzzz>; HiZ drive
+v0000023f6dfab8c0_0 .net "opcode", 3 0, o0000023f6df67078;  0 drivers
+v0000023f6dfab960 .array "rom", 0 15, 8 0;
+L_0000023f6dfaba00 .array/port v0000023f6dfab960, L_0000023f6dfabaa0;
+L_0000023f6dfabaa0 .concat [ 4 2 0 0], o0000023f6df67078, L_0000023f6dfabb48;
+    .scope S_0000023f6e0dad80;
+T_0 ;
+    %pushi/vec4 32, 0, 9;
+    %ix/load 4, 0, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0000023f6dfab960, 4, 0;
+    %pushi/vec4 96, 0, 9;
+    %ix/load 4, 1, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0000023f6dfab960, 4, 0;
+    %pushi/vec4 160, 0, 9;
+    %ix/load 4, 2, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0000023f6dfab960, 4, 0;
+    %pushi/vec4 224, 0, 9;
+    %ix/load 4, 3, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0000023f6dfab960, 4, 0;
+    %pushi/vec4 288, 0, 9;
+    %ix/load 4, 4, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0000023f6dfab960, 4, 0;
+    %pushi/vec4 352, 0, 9;
+    %ix/load 4, 5, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0000023f6dfab960, 4, 0;
+    %pushi/vec4 416, 0, 9;
+    %ix/load 4, 6, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0000023f6dfab960, 4, 0;
+    %pushi/vec4 497, 0, 9;
+    %ix/load 4, 7, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0000023f6dfab960, 4, 0;
+    %pushi/vec4 457, 0, 9;
+    %ix/load 4, 8, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0000023f6dfab960, 4, 0;
+    %pushi/vec4 481, 0, 9;
+    %ix/load 4, 9, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0000023f6dfab960, 4, 0;
+    %pushi/vec4 451, 0, 9;
+    %ix/load 4, 10, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0000023f6dfab960, 4, 0;
+    %pushi/vec4 69, 0, 9;
+    %ix/load 4, 11, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0000023f6dfab960, 4, 0;
+    %pushi/vec4 69, 0, 9;
+    %ix/load 4, 12, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0000023f6dfab960, 4, 0;
+    %pushi/vec4 448, 0, 9;
+    %ix/load 4, 13, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0000023f6dfab960, 4, 0;
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "control_rom.v";
