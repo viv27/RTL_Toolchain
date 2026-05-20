@@ -4,7 +4,7 @@ A Python-based toolchain that automatically generates synthesizable Verilog RTL 
 
 ## What This Is
 
-Most RTL workflows require engineers to hand-write Verilog for every instruction in a processor's ISA. This toolchain takes a different approach — the ISA is defined once in a JSON spec file, and the toolchain automatically generates the Verilog control logic from it. Change the spec, re-run one command, and new correct Verilog comes out.
+Most RTL workflows require engineers to hand-write Verilog for every instruction in a processor's ISA. This toolchain takes a different approach, the ISA is defined once in a JSON spec file, and the toolchain automatically generates the Verilog control logic from it. Change the spec, re-run one command, and new correct Verilog comes out.
 
 The JSON spec is the **single source of truth**. Nothing is hardcoded anywhere else.
 
@@ -39,7 +39,7 @@ python main.py ../isa_spec.json --simulate
 
 This single command:
 1. Parses the ISA spec
-2. Validates it — stops if errors are found
+2. Validates it and stops if errors are found
 3. Generates `decoder.v`, `control_rom.v`, and `tb_decoder.v`
 4. Compiles with iverilog and runs simulation
 
@@ -189,7 +189,7 @@ PASS: missing signal detected
 
 ## Why Two RTL Implementations?
 
-The same JSON spec generates both a case-based decoder and a ROM-based control unit — demonstrating that the toolchain can produce multiple RTL architectures from a single source of truth.
+The same JSON spec generates both a case-based decoder and a ROM-based control unit, demonstrating that the toolchain can produce multiple RTL architectures from a single source of truth.
 
 - **Case-based decoder** — synthesizes to a priority mux, efficient for small ISAs
 - **ROM-based control unit** — scales better for large instruction sets, closer to microcoded control units used in real processors like x86
