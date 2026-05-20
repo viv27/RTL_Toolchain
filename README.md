@@ -1,6 +1,6 @@
 # CUSTOM16 RTL Toolchain
 
-A Python-based toolchain that automatically generates synthesizable Verilog RTL from a JSON ISA specification — eliminating manual RTL authoring for a custom 16-bit processor ISA.
+A Python-based toolchain that automatically generates synthesizable Verilog RTL from a JSON ISA specification, eliminating manual RTL authoring for a custom 16-bit processor ISA.
 
 ## What This Is
 
